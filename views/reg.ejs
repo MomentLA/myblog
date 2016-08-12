@@ -1,0 +1,13 @@
+
+<%- include header %>
+<div>
+    <form method="post" class="for form"  style="height: 400px;">
+        <label>用户：</label><input type="text" name="name" pattern="^[a-zA-Z]{6,12}$" required/><br />
+        <label>密码：</label><input type="password" name="password" pattern="^.{6,12}$"  required /><br />
+        <label>确认：</label><input type="password" name="password-repeat"  pattern="^.{6,12}$"  required/><br />
+        <label>邮箱：</label><input type="email" name="email"/><br />
+        <input type="submit" value="注册" style="background: rgb(255,202,107);margin-left: 60px;"/>
+    </form>
+</div>
+
+<%- include footer %>

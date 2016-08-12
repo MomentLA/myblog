@@ -1,0 +1,99 @@
+
+
+<%- include header %>
+<div class="content_bg">
+    <% posts.forEach(function (post, index) { %>
+    <div class="content_left">
+        <div id="content">
+            <p><h2 id="title"><a href="u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h2></p>
+            <!--<img src="/images/ic.jpeg">-->
+            <p class="info">
+                作者：<a href="/u/<%= post.name %>"><%= post.name %></a> |
+                日期：<%= post.time.minute %> |
+                标签：
+                <% post.tags.forEach(function (tag, index) { %>
+                <% if (tag) { %>
+                <a class="tag" href="/tags/<%= tag %>"><%= tag %></a>
+                <% } %>
+                <% }) %>
+            </p>
+            <p style="line-height: 20px;"><%- post.post %></p>
+            <p class="info">阅读：<%= post.pv %> | 评论：<%= post.comments.length %></p>
+        </div>
+        <% }) %>
+
+    </div>
+    <div id="content-right">
+        <figure>
+            <a href="http://yuedu.163.com/book/subject/43a612e938284edb8c0fa27351981632"><img src="/images/shu1.jpg" class="touxiang"></a>
+            <figcaption>七夕脱单计划书</figcaption>
+        </figure>
+        <figure>
+            <a href="http://yuedu.163.com/source/8f5ddd9e10d040d18dd7c5fe461443fa_4"><img src="/images/shu2.jpg" class="touxiang"></a>
+             <figcaption>女王乔安（戚薇、王晓晨主演热播剧原著）</br>
+                 （84人评分）
+                 分    类：	影视小说</br>
+                 作    者：	张晓晗</br>
+                 字    数：	17.2万</br>
+                 点    击：	206.1万</br>
+             </figcaption>
+        </figure>
+        <figure>
+           <a href="http://yuedu.163.com/source/f37ddb26f5ff4af2a38b1c296ee5a02a_4"><img src="/images/shu3.jpg" class="touxiang"></a>
+            <figcaption>
+                我喜欢这个“功利”的世界：这世界承认每一个人的努力<br>
+                分    类：	人生智慧<br>
+                作    者：	咪蒙<br>
+                字    数：	12.7万<br>
+                点    击：	268.2万<br>
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="/images/shu4.jpg" class="touxiang">
+            <figcaption>
+                谷歌在专利申请材料中表示，目前自拍存在很棘手的问题，
+                用户在踢球、跳舞等运动过程中难以自拍，也难以在运动中编辑照片
+                并通过社交平台分享。
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="/images/shu5.jpeg" class="touxiang">
+            <figcaption>
+                <h5>你的诗和远方在VR里？玩家在家骑行穿越英国</h5>
+                应该有不少VR爱好者体验过虚拟现实健身运动<br>
+                在过往的两年中YiViAn也报道过多种VR健<br>
+                身应用，包括VirZoom、Ebove这两种自行车健<br>
+                身应用<br>
+                有趣的是，英国有一位电子游戏玩家计划利用三星Gear VR、自行车和谷歌街景<br>
+                从南到北穿越大不列颠。
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="/images/shu6.jpeg" class="touxiang">
+            <figcaption>
+                <h5>Hololens仍是开发者版 微软为何不布局消费级？</h5>
+                微软本月2号在官网宣布，Hololens已经在美国和加拿大<br>
+                正式开售了。作为一款Windows 10发布会上的意外产品自<br>
+                面世以来消费者就对它的娱乐功用充满了期待。<br>
+                知名游戏厂商TAKE2虽然几度拒绝了VR的应用开发<br>
+                但TAKE2的CEO Strauss Zelnick却对这款头戴式产品赞赏<br>
+                加。而微软早前在2015年的E3大展上，也基于HoloLens演<br>
+                过Minecraft的应用，展现了该设备的娱乐潜能。更是有<br>
+                为这款产品会改变消费者的客厅格局，在这样的呼声下<br>
+                推出Hololens的消费者版本应该更为合理。<br>
+                但令人遗憾的是，正式发售的HoloLens目前仍是面向开发<br>
+                和企业的商用版本。实际上，微软CEO Satya Nadella早<br>
+                在去年接受采访时就表示，将Hololens完全定位于游戏领<br>
+                域是非常不明智的，他希望这款产品有更多的商业用途。<br>
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="/images/shu1.jpg" class="touxiang">
+        </figure>
+    </div>
+    </div>
+
+    <%- include paging %>
+    <%- include footer %>
+
+

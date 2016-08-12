@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script type="text/javascript" src="/javascript/tool.js"></script>
+    <script type="text/javascript" src="/javascript/base.js"></script>
+    <script type="text/javascript" src="/javascript/ajax.js"></script>
+    <script type="text/javascript" src="/javascript/json2.js"></script>
+    <script type="text/javascript" src="/javascript/base_drag.js"></script>
+    <script type="text/javascript" src="/javascript/base_form.js"></script>
+    <script type="text/javascript" src="/javascript/index.js"></script>
+    <style>
+
+    </style>
+</head>
+<body >
+<div class="header" >
+    <div class="left">
+        <h4>喔，稀有！</h4>
+        <p>在这里你可以发表文章</p>
+    </div>
+</div>
+<div id="bg-nav" class=" bar-header">
+    <ul id="bg-ul">
+        <div id="header">
+            <form action="/search" method="GET" >
+                <input type="text" name="keyword" placeholder="搜索" class="search"/>
+                <input type="submit" value="搜索" class="submit"/>
+            </form>
+            </form>
+        </div>
+        <% if (user) { %>
+                <li><a href="/upload">上传</a></li>
+                <li><a href="/post">发布</a></li>
+                <li><a href="/logout">退出</a></li>
+        <% } else { %>
+        <li><a title="注册" href="/reg">注册</a></li>
+        <li><a title="登录" href="/login">登录</a></li>
+        <% } %>
+        <li><a href="/archive">存档</a></li>
+        <li><a href="/tags">标签</a></li>
+        <li><a href="/">首页</a></li>
+    </ul>
+</div>
+<article>
+    <% if (success) { %>
+    <div><%= success %></div>
+    <% } %>
+    <% if (error) { %>
+    <div><%= error %> </div>
+    <% } %>
